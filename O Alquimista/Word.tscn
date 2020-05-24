@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Alquimista.gd" type="Script" id=1]
 [ext_resource path="res://Asset/Alquimista passo1.png" type="Texture" id=2]
-[ext_resource path="res://Asset/Chão montanha.png" type="Texture" id=3]
+[ext_resource path="res://Mapa.tres" type="TileSet" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 43.9054 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 64, 32 )
 
 [node name="Word" type="Node"]
 
@@ -31,133 +28,8 @@ visible = false
 position = Vector2( 3.8147e-006, -1.52588e-005 )
 shape = SubResource( 1 )
 
-[node name="Chão" type="Node" parent="."]
-editor/display_folded = true
-
-[node name="Chão1" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 64, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão1"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão1"]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Chão2" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 192, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão2"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão2"]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Chão3" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 320, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão3"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão3"]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Chão4" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 448, 544 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão4"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão4"]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Chão5" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 576, 544 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão5"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão5"]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Chão6" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 704, 544 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão6"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão6"]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Chão7" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 832, 544 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão7"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão7"]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Chão8" type="StaticBody2D" parent="Chão"]
-editor/display_folded = true
-position = Vector2( 960, 544 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Chão/Chão8"]
-position = Vector2( -1.90735e-006, 0 )
-scale = Vector2( 0.0871935, 0.0699607 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão/Chão8"]
-visible = false
-shape = SubResource( 2 )
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_quadrant_size = 7
+format = 1
+tile_data = PoolIntArray( 327671, 1, 0, 393221, 1, 0 )
