@@ -19,6 +19,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="0"]
+collision_layer = 3
 physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="0/StaticBody2D"]

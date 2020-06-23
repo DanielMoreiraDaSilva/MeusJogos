@@ -1,13 +1,30 @@
-extends Area2D
+extends StaticBody2D
 
 var posicao
 var velocidade = 10
 
+func _ready():
+	set_process(true)
+	posicao = $".".position
+	
+	
 func _process(delta):
 	$".".position.x += velocidade
+	print($".".position.x)
 	
+	if $".".position.x >= posicao.x + 500:
+		queue_free()
+		
+	elif $".".position.x <= posicao.x -500:		
+		queue_free()
+		
+	if velocidade == -10:
+		$Sprite.flip_h = true;
+		
 
-func _on_BolaDeFogo_body_entered(body):
-	print("ta rolando")
+
+func _on_Area2D_body_entered(body):
 	body.dano()
-	$".".queue_free()
+
+func _on_Area2D2_body_entered(body):
+	queue_free()

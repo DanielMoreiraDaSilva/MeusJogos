@@ -5,7 +5,8 @@ const GRAVITY = 20
 const SPEED = 500
 const JUMP = -600
 var motion = Vector2()
-var vida = 2
+var vida = 5
+var poder = preload("res://Personagem/BolaDeFogo.tscn")
 
 func _physics_process(delta):
 
@@ -39,16 +40,31 @@ func _physics_process(delta):
 		
 	motion = move_and_slide(motion, UP)
 
+# Sprite de posição de ataque
+	if Input.is_action_pressed("ui_select"):
+		$Sprite.play("Poder")
+
 # Bola de fogo
 	if Input.is_action_just_pressed("ui_select"):
-		get_tree().change_scene("res://Personagem/BolaDeFogo.tscn")
+		# instancia um nó de fora
+		var _poder = poder.instance()
+		# pega a mesma posição do objeto
+		_poder.position = $".".position
+		
+		#verifica pra qual lado o personagem está virado
+		# e muda o sprite da bola de fogo
+		if $Sprite.flip_h == false:
+			get_node("../").add_child(_poder)
+		else:
+			_poder.velocidade = -10
+			get_node("../").add_child(_poder)
+		
 
 # Pula ao tocar na cabeça do inimigo
 # Calsa dano no inimigo
 func _on_Pes_body_entered(body):
 	motion.y = JUMP
 	body.dano()
-
 # Sofre dano
 func _on_Dano_body_entered(body):
 	vida -= 1

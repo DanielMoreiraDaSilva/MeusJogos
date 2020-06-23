@@ -13,6 +13,3 @@ func _on_Start_pressed():
 
 func _on_Exit_pressed():
 	get_tree().quit()
-
-func _on_FullScreen_pressed():
-	OS.window_fullscreen = true
