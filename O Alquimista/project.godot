@@ -19,9 +19,9 @@ config/name="Alquimista"
 run/main_scene="res://Menu.tscn"
 config/use_custom_user_dir=true
 
-[display]
+[autoload]
 
-window/size/fullscreen=true
+VariaveisGlobais="*res://Script/VariaveisGlobais.gd"
 
 [input]
 

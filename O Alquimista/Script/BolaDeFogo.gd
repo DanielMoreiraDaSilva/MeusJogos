@@ -10,7 +10,6 @@ func _ready():
 	
 func _process(delta):
 	$".".position.x += velocidade
-	print($".".position.x)
 	
 	if $".".position.x >= posicao.x + 500:
 		queue_free()

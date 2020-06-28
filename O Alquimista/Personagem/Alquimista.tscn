@@ -10,14 +10,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "Run",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "Jump",
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "Poder",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -25,10 +20,15 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": false,
-"name": "Poder",
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Run",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -40,7 +40,9 @@ extents = Vector2( 19.9953, 4.99881 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 33, 42.9965 )
 
-[node name="Alquimista" type="KinematicBody2D"]
+[node name="Alquimista" type="KinematicBody2D" groups=[
+"Player",
+]]
 position = Vector2( 160, 160 )
 rotation = -0.0011739
 script = ExtResource( 6 )
@@ -59,9 +61,8 @@ shape = SubResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 32, 0.0375824 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
-limit_top = 0
-limit_bottom = 700
+limit_top = -1000
+limit_bottom = 800
 limit_smoothed = true
 smoothing_enabled = true
 

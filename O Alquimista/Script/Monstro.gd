@@ -4,6 +4,7 @@ var flip = false
 var posicaoInicial
 var posicaoFinal
 var velocidade = 4
+var vidaMonstro = 4
 
 func _ready():
 	$AnimatedSprite.play("Run")
@@ -27,8 +28,10 @@ func _process(delta):
 
 
 func dano():
-	print("aqui ó")
-	get_node("AnimationPlayer").play("morte")
+	vidaMonstro -= 1
+	get_node("AnimationPlayer").play("DanoMonstro")
+	if vidaMonstro <= 0 :
+	 get_node("AnimationPlayer").play("morte")
 	
 func morte():
 	$".".queue_free()
